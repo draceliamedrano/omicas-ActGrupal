@@ -1,0 +1,6 @@
+Esta carpeta contiene:
+- Archivo csv con la descripción de las muestras -> Design.csv
+- Archivo con el genoma de referencia -> Referencia.fasta
+- Listado de transcritos y sus genes -> Transcrito_a_Gen.tsv
+- Carpeta con los archivos Fastq -> Fastqs
+- Carpeta con los genes -> Genes
