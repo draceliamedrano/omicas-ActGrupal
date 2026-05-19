@@ -11,4 +11,5 @@ Distribución de tareas entre los miembros del grupo:
 - Póster: Cristina y Ariadna -> Deadline: sábado 23 de mayo.
 
 El póster se aloja en OneDrive para trabajar en línea:
-https://unirnet-my.sharepoint.com/:f:/r/personal/celia_medrano_unir_net/Documents/MUBI-omicas-ActGrupal?csf=1&web=1&e=c5zM4Z
+https://drive.google.com/drive/folders/1PF7T088k9lYrLYSXFr1_J_c_FvO2jpim?usp=share_link
+
