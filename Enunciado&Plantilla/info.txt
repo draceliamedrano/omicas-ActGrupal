@@ -1,1 +1,3 @@
-
+Esta carpeta contiene:
+- Enunciado de la actividad grupal.
+- Plantilla del póster.
