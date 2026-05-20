@@ -49,7 +49,7 @@ fastqc Quality/Trimmed/MaggieSimpson_R2_filtered.fastq.gz -o Quality/Filtered/ -
 ## Informe resumen con multiqc
 multiqc .
 
-# Alineamiento
+# Alineamiento y cuantificación
 conda install -c conda-forge -c bioconda salmon
 
 ## Indexar el genoma de referencia
@@ -66,6 +66,8 @@ salmon quant -i salmon_index -l A -1 Quality/Trimmed/BartSimpson_R1_filtered.fas
 
 salmon quant -i salmon_index -l A -1 Quality/Trimmed/MaggieSimpson_R1_filtered.fastq.gz -2 Quality/Trimmed/MaggieSimpson_R2_filtered.fastq.gz -o resultados_salmon_trimmed/MaggieSimpson
 
-## Cuantificación
+## Cuantificación: Matriz de conteo
+echo "Name,AbrahamSimpson,HomerSimpson,BartSimpson,LisaSimpson,MaggieSimpson" > matriz_counts_salmon.csv
 
+paste <(tail -n +2 resultados_salmon_trimmed/AbrahamSimpson/quant.sf | cut -f1) <(tail -n +2 resultados_salmon_trimmed/AbrahamSimpson/quant.sf | cut -f5) <(tail -n +2 resultados_salmon_trimmed/HomerSimpson/quant.sf | cut -f5) <(tail -n +2 resultados_salmon_trimmed/BartSimpson/quant.sf | cut -f5) <(tail -n +2 resultados_salmon_trimmed/LisaSimpson/quant.sf | cut -f5) <(tail -n +2 resultados_salmon_trimmed/MaggieSimpson/quant.sf | cut -f5) | sed 's/\t/,/g' >> matriz_counts_salmon.csv
 
