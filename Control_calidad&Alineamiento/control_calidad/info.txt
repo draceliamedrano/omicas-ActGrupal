@@ -1,1 +1,0 @@
-En este archivo estan los resultados de l analisis de caldiad con Fastqc
