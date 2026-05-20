@@ -1,0 +1,9 @@
+{
+    "salmon_version": "1.11.4",
+    "index": "salmon_index",
+    "libType": "A",
+    "mates1": "Quality/Trimmed/HomerSimpson_R1_filtered.fastq.gz",
+    "mates2": "Quality/Trimmed/HomerSimpson_R2_filtered.fastq.gz",
+    "output": "resultados_salmon_trimmed/HomerSimpson",
+    "auxDir": "aux_info"
+}
