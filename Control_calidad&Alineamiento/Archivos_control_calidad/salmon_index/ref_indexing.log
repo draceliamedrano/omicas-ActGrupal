@@ -1,0 +1,32 @@
+[2026-05-20 19:23:56.415] [puff::index::jointLog] [info] Running fixFasta
+[2026-05-20 19:23:56.475] [puff::index::jointLog] [warning] Removed 27 transcripts that were sequence duplicates of indexed transcripts.
+[2026-05-20 19:23:56.475] [puff::index::jointLog] [warning] If you wish to retain duplicate transcripts, please use the `--keepDuplicates` flag
+[2026-05-20 19:23:56.475] [puff::index::jointLog] [info] Replaced 0 non-ATCG nucleotides
+[2026-05-20 19:23:56.475] [puff::index::jointLog] [info] Clipped poly-A tails from 4 transcripts
+[2026-05-20 19:23:56.484] [puff::index::jointLog] [info] Filter size not provided; estimating from number of distinct k-mers
+[2026-05-20 19:23:56.536] [puff::index::jointLog] [info] ntHll estimated 372573 distinct k-mers, setting filter size to 2^23
+[2026-05-20 19:23:57.099] [puff::index::jointLog] [info] Starting the Pufferfish indexing by reading the GFA binary file.
+[2026-05-20 19:23:57.099] [puff::index::jointLog] [info] Setting the index/BinaryGfa directory salmon_index
+[2026-05-20 19:23:57.100] [puff::index::jointLog] [info] Done wrapping the rank vector with a rank9sel structure.
+[2026-05-20 19:23:57.101] [puff::index::jointLog] [info] contig count for validation: 1,793
+[2026-05-20 19:23:57.101] [puff::index::jointLog] [info] Total # of Contigs : 1,793
+[2026-05-20 19:23:57.101] [puff::index::jointLog] [info] Total # of numerical Contigs : 1,793
+[2026-05-20 19:23:57.101] [puff::index::jointLog] [info] Total # of contig vec entries: 20,508
+[2026-05-20 19:23:57.101] [puff::index::jointLog] [info] bits per offset entry 15
+[2026-05-20 19:23:57.101] [puff::index::jointLog] [info] Done constructing the contig vector. 1,794
+[2026-05-20 19:23:57.102] [puff::index::jointLog] [info] # segments = 1,793
+[2026-05-20 19:23:57.102] [puff::index::jointLog] [info] total length = 464,715
+[2026-05-20 19:23:57.102] [puff::index::jointLog] [info] Reading the reference files ...
+[2026-05-20 19:23:57.114] [puff::index::jointLog] [info] positional integer width = 19
+[2026-05-20 19:23:57.114] [puff::index::jointLog] [info] seqSize = 464,715
+[2026-05-20 19:23:57.114] [puff::index::jointLog] [info] rankSize = 464,715
+[2026-05-20 19:23:57.114] [puff::index::jointLog] [info] edgeVecSize = 0
+[2026-05-20 19:23:57.114] [puff::index::jointLog] [info] num keys = 410,925
+[2026-05-20 19:23:57.114] [puff::index::jointLog] [info] Writing contig sequences to temporary FASTA for SSHash ...
+[2026-05-20 19:23:57.119] [puff::index::jointLog] [info] Wrote 1793 contigs to temporary FASTA.
+[2026-05-20 19:23:57.119] [puff::index::jointLog] [info] Building SSHash dictionary ...
+[2026-05-20 19:23:57.119] [puff::index::jointLog] [info] Using minimizer length m = 20
+[2026-05-20 19:23:57.153] [puff::index::jointLog] [info] SSHash dictionary built: 410,925 kmers, 1,793 strings
+[2026-05-20 19:23:57.153] [puff::index::jointLog] [info] Saving SSHash dictionary to salmon_index/sshash.bin ...
+[2026-05-20 19:23:57.153] [puff::index::jointLog] [info] writing index components
+[2026-05-20 19:23:57.154] [puff::index::jointLog] [info] finished writing SSHash pufferfish index
