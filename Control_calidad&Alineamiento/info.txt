@@ -32,8 +32,8 @@ fastp --in1 BartSimpson_R1.fastq.gz --in2 BartSimpson_R2.fastq.gz --out1 Trimmed
 
 fastp --in1 MaggieSimpson_R1.fastq.gz --in2 MaggieSimpson_R2.fastq.gz --out1 Trimmed/MaggieSimpson_R1_filtered.fastp.gz --out2 Trimmed/MaggieSimpson_R2_filtered.fastp.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/MaggieSimpson.json --html Trimmed/MaggieSimpson.html -t 32
 
+
 ## Segundo control de calidad con fastqc
-for i in $(cat Muestras.txt); do fastqc Trimmed/*fastp.gz -t 32 -o Quality/Filtered/$i"_filtered.fastq.gz"; done
 
 fastqc Quality/Trimmed/AbrahamSimpson_R1_filtered.fastp.gz -o Quality/Filtered/ -t 32
 fastqc Quality/Trimmed/AbrahamSimpson_R2_filtered.fastp.gz -o Quality/Filtered/ -t 32
