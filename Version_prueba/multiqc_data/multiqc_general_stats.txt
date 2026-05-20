@@ -1,0 +1,32 @@
+Sample	salmon-percent_mapped	salmon-num_mapped	salmon-library_types	salmon-compatible_fragment_ratio	salmon-strand_mapping_bias	fastp-pct_duplication	fastp-after_filtering_q30_rate	fastp-after_filtering_q30_bases	fastp-filtering_result_passed_filter_reads	fastp-after_filtering_gc_content	fastp-pct_surviving_reads	fastp-pct_surviving_bases	fastp-pct_adapter	fastp-before_filtering_read1_mean_length	fastp-before_filtering_read2_mean_length	fastqc-percent_duplicates	fastqc-percent_gc	fastqc-avg_sequence_length	fastqc-median_sequence_length	fastqc-percent_fails	fastqc-total_sequences
+AbrahamSimpson	100.0	0.00132	IU	100.0	1.0	0.0	94.138	0.367509	0.00264	46.1214	100.0	97.93146698775837	13.257575757575758	151.0	151.0						
+AbrahamSimpson_R1																0.8333333333333286	46.0	151.0	151	10.0	0.00132
+AbrahamSimpson_R2																0.7575757575757507	46.0	151.0	151	10.0	0.00132
+AbrahamSimpson_trimmed_R1																0.8333333333333286	46.0	147.85	151	10.0	0.00132
+AbrahamSimpson_trimmed_R2																0.7575757575757507	46.0	147.85	151	10.0	0.00132
+BartSimpson	100.0	0.001328	IU	100.0	1.0	0.0	94.2806	0.369927	0.002656	46.2558	100.0	97.83371898188781	14.457831325301203	151.0	151.0						
+BartSimpson_R1																0.6024096385542066	46.0	151.0	151	0.0	0.001328
+BartSimpson_R2																0.6024096385542066	46.0	151.0	151	0.0	0.001328
+BartSimpson_trimmed_R1																0.6024096385542066	46.0	147.67093373493975	151	0.0	0.001328
+BartSimpson_trimmed_R2																0.6024096385542066	46.0	147.67093373493975	151	0.0	0.001328
+HomerSimpson	100.0	0.00132	IU	100.0	1.0	0.0	94.11880000000001	0.36730999999999997	0.00264	46.018100000000004	100.0	97.89835440497691	14.015151515151514	151.0	151.0						
+HomerSimpson_R1																0.6060606060606091	45.0	151.0	151	10.0	0.00132
+HomerSimpson_R2																0.6060606060606091	46.0	151.0	151	0.0	0.00132
+HomerSimpson_trimmed_R1																0.6060606060606091	45.0	147.81742424242424	151	10.0	0.00132
+HomerSimpson_trimmed_R2																0.6060606060606091	46.0	147.81742424242424	151	10.0	0.00132
+LisaSimpson	100.0	0.00132	IU	100.0	1.0	0.0	93.85	0.364581	0.00264	46.2566	100.0	97.44932771422837	17.424242424242426	151.0	151.0						
+LisaSimpson_R1																0.30303030303031164	46.0	151.0	151	10.0	0.00132
+LisaSimpson_R2																0.37878787878787534	46.0	151.0	151	0.0	0.00132
+LisaSimpson_trimmed_R1																0.30303030303031164	46.0	147.1280303030303	151	10.0	0.00132
+LisaSimpson_trimmed_R2																0.37878787878787534	46.0	147.1280303030303	151	0.0	0.00132
+MaggieSimpson	100.0	0.001328	IU	100.0	1.0	0.0	94.13719999999999	0.368969	0.002656	45.9541	100.0	97.7289954520067	14.984939759036145	151.0	151.0						
+MaggieSimpson_R1																0.22590361445783458	45.0	151.0	151	0.0	0.001328
+MaggieSimpson_R2																0.3765060240963862	46.0	151.0	151	10.0	0.001328
+MaggieSimpson_trimmed_R1																0.22590361445783458	45.0	147.51882530120483	151	0.0	0.001328
+MaggieSimpson_trimmed_R2																0.3765060240963862	46.0	147.51882530120483	151	10.0	0.001328
+MargeSimpson_R1																0.5271084337349379	46.0	151.0	151	10.0	0.001328
+MargeSimpson_R2																0.7396449704142043	46.0	151.0	151	0.0	0.001352
+PattyBouvier_R1																0.5303030303030312	46.0	151.0	151	0.0	0.00132
+PattyBouvier_R2																0.5208333333333428	46.0	151.0	151	10.0	0.001344
+SelmaBouvier_R1																0.22590361445783458	45.0	151.0	151	10.0	0.001328
+SelmaBouvier_R2																0.5917159763313578	46.0	151.0	151	10.0	0.001352
