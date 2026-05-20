@@ -22,29 +22,50 @@ fastqc MaggieSimpson_R2.fastq.gz -o Quality/ -t 32
 
 ## Filtrado de secuencias con fastp
 mkdir Trimmed
-fastp --in1 AbrahamSimpson_R1.fastq.gz --in2 AbrahamSimpson_R2.fastq.gz --out1 Trimmed/AbrahamSimpson_R1_filtered.fastp.gz --out2 Trimmed/AbrahamSimpson_R2_filtered.fastp.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/AbrahamSimpson.json --html Trimmed/AbrahamSimpson.html -t 32
+fastp --in1 AbrahamSimpson_R1.fastq.gz --in2 AbrahamSimpson_R2.fastq.gz --out1 Quality/Trimmed/AbrahamSimpson_R1_filtered.fastq.gz --out2 Quality/Trimmed/AbrahamSimpson_R2_filtered.fastq.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/AbrahamSimpson.json --html Trimmed/AbrahamSimpson.html -t 32
 
-fastp --in1 HomerSimpson_R1.fastq.gz --in2 HomerSimpson_R2.fastq.gz --out1 Trimmed/HomerSimpson_R1_filtered.fastp.gz --out2 Trimmed/HomerSimpson_R2_filtered.fastp.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/HomerSimpson.json --html Trimmed/HomerSimpson.html -t 32
+fastp --in1 HomerSimpson_R1.fastq.gz --in2 HomerSimpson_R2.fastq.gz --out1 Quality/Trimmed/HomerSimpson_R1_filtered.fastq.gz --out2 Quality/Trimmed/HomerSimpson_R2_filtered.fastq.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/HomerSimpson.json --html Trimmed/HomerSimpson.html -t 32
 
-fastp --in1 LisaSimpson_R1.fastq.gz --in2 LisaSimpson_R2.fastq.gz --out1 Trimmed/LisaSimpson_R1_filtered.fastp.gz --out2 Trimmed/LisaSimpson_R2_filtered.fastp.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/LisaSimpson.json --html Trimmed/LisaSimpson.html -t 32
+fastp --in1 LisaSimpson_R1.fastq.gz --in2 LisaSimpson_R2.fastq.gz --out1 Quality/Trimmed/LisaSimpson_R1_filtered.fastq.gz --out2 Quality/Trimmed/LisaSimpson_R2_filtered.fastq.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/LisaSimpson.json --html Trimmed/LisaSimpson.html -t 32
 
-fastp --in1 BartSimpson_R1.fastq.gz --in2 BartSimpson_R2.fastq.gz --out1 Trimmed/BartSimpson_R1_filtered.fastp.gz --out2 Trimmed/BartSimpson_R2_filtered.fastp.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/BartSimpson.json --html Trimmed/BartSimpson.html -t 32
+fastp --in1 BartSimpson_R1.fastq.gz --in2 BartSimpson_R2.fastq.gz --out1 Quality/Trimmed/BartSimpson_R1_filtered.fastq.gz --out2 Quality/Trimmed/BartSimpson_R2_filtered.fastq.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/BartSimpson.json --html Trimmed/BartSimpson.html -t 32
 
-fastp --in1 MaggieSimpson_R1.fastq.gz --in2 MaggieSimpson_R2.fastq.gz --out1 Trimmed/MaggieSimpson_R1_filtered.fastp.gz --out2 Trimmed/MaggieSimpson_R2_filtered.fastp.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/MaggieSimpson.json --html Trimmed/MaggieSimpson.html -t 32
+fastp --in1 MaggieSimpson_R1.fastq.gz --in2 MaggieSimpson_R2.fastq.gz --out1 Quality/Trimmed/MaggieSimpson_R1_filtered.fastq.gz --out2 Quality/Trimmed/MaggieSimpson_R2_filtered.fastq.gz --detect_adapter_for_pe --cut_front --cut_tail --cut_window_size 12 --cut_mean_quality 20 --length_required 35 --json Trimmed/MaggieSimpson.json --html Trimmed/MaggieSimpson.html -t 32
 
 
 ## Segundo control de calidad con fastqc
-
-fastqc Quality/Trimmed/AbrahamSimpson_R1_filtered.fastp.gz -o Quality/Filtered/ -t 32
-fastqc Quality/Trimmed/AbrahamSimpson_R2_filtered.fastp.gz -o Quality/Filtered/ -t 32
-fastqc Quality/Trimmed/HomerSimpson_R1_filtered.fastp.gz -o Quality/Filtered/ -t 32
-fastqc Quality/Trimmed/HomerSimpson_R2_filtered.fastp.gz -o Quality/Filtered/ -t 32
-fastqc Quality/Trimmed/LisaSimpson_R1_filtered.fastp.gz -o Quality/Filtered/ -t 32
-fastqc Quality/Trimmed/LisaSimpson_R2_filtered.fastp.gz -o Quality/Filtered/ -t 32
-fastqc Quality/Trimmed/BartSimpson_R1_filtered.fastp.gz -o Quality/Filtered/ -t 32
-fastqc Quality/Trimmed/BartSimpson_R2_filtered.fastp.gz -o Quality/Filtered/ -t 32
-fastqc Quality/Trimmed/MaggieSimpson_R1_filtered.fastp.gz -o Quality/Filtered/ -t 32
-fastqc Quality/Trimmed/MaggieSimpson_R2_filtered.fastp.gz -o Quality/Filtered/ -t 32
+mkdir Quality/Filtered
+fastqc Quality/Trimmed/AbrahamSimpson_R1_filtered.fastq.gz -o Quality/Filtered/ -t 32
+fastqc Quality/Trimmed/AbrahamSimpson_R2_filtered.fastq.gz -o Quality/Filtered/ -t 32
+fastqc Quality/Trimmed/HomerSimpson_R1_filtered.fastq.gz -o Quality/Filtered/ -t 32
+fastqc Quality/Trimmed/HomerSimpson_R2_filtered.fastq.gz -o Quality/Filtered/ -t 32
+fastqc Quality/Trimmed/LisaSimpson_R1_filtered.fastq.gz -o Quality/Filtered/ -t 32
+fastqc Quality/Trimmed/LisaSimpson_R2_filtered.fastq.gz -o Quality/Filtered/ -t 32
+fastqc Quality/Trimmed/BartSimpson_R1_filtered.fastq.gz -o Quality/Filtered/ -t 32
+fastqc Quality/Trimmed/BartSimpson_R2_filtered.fastq.gz -o Quality/Filtered/ -t 32
+fastqc Quality/Trimmed/MaggieSimpson_R1_filtered.fastq.gz -o Quality/Filtered/ -t 32
+fastqc Quality/Trimmed/MaggieSimpson_R2_filtered.fastq.gz -o Quality/Filtered/ -t 32
 
 ## Informe resumen con multiqc
 multiqc .
+
+# Alineamiento
+conda install -c conda-forge -c bioconda salmon
+
+## Indexar el genoma de referencia
+salmon index -t Referencia.fasta -i salmon_index
+
+## Mapear los ficheros con la referencia
+salmon quant -i salmon_index -l A -1 Quality/Trimmed/AbrahamSimpson_R1_filtered.fastq.gz -2 Quality/Trimmed/AbrahamSimpson_R2_filtered.fastq.gz -o resultados_salmon_trimmed/AbrahamSimpson
+
+salmon quant -i salmon_index -l A -1 Quality/Trimmed/HomerSimpson_R1_filtered.fastq.gz -2 Quality/Trimmed/HomerSimpson_R2_filtered.fastq.gz -o resultados_salmon_trimmed/HomerSimpson
+
+salmon quant -i salmon_index -l A -1 Quality/Trimmed/LisaSimpson_R1_filtered.fastq.gz -2 Quality/Trimmed/LisaSimpson_R2_filtered.fastq.gz -o resultados_salmon_trimmed/LisaSimpson
+
+salmon quant -i salmon_index -l A -1 Quality/Trimmed/BartSimpson_R1_filtered.fastq.gz -2 Quality/Trimmed/BartSimpson_R2_filtered.fastq.gz -o resultados_salmon_trimmed/BartSimpson
+
+salmon quant -i salmon_index -l A -1 Quality/Trimmed/MaggieSimpson_R1_filtered.fastq.gz -2 Quality/Trimmed/MaggieSimpson_R2_filtered.fastq.gz -o resultados_salmon_trimmed/MaggieSimpson
+
+## Cuantificación
+
+
