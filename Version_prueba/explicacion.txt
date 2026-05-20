@@ -1,0 +1,51 @@
+
+Comandos usados en el análisis RNA-seq
+Paso	Objetivo	Comando
+1	Activar el ambiente de conda	conda activate salmon_env
+2	Verificar versión de Salmon	salmon --version
+3	Instalar herramientas necesarias	conda install -c conda-forge -c bioconda fastqc multiqc fastp salmon
+4	Ver archivos de la carpeta actual	ls
+5	Ver la ruta actual	pwd
+6	Buscar archivos FASTQ	find . -name "*.fastq.gz"
+7	Control de calidad inicial con FastQC	fastqc *.fastq.gz
+8	Crear reporte general con MultiQC	multiqc .
+9	Abrir reporte de MultiQC en Mac	open multiqc_report.html
+
+Limpieza de lecturas con fastp
+Muestra	Comando
+Abraham Simpson	fastp -i AbrahamSimpson_R1.fastq.gz -I AbrahamSimpson_R2.fastq.gz -o fastp_trimmed/AbrahamSimpson_trimmed_R1.fastq.gz -O fastp_trimmed/AbrahamSimpson_trimmed_R2.fastq.gz -h fastp_reports/AbrahamSimpson_fastp.html -j fastp_reports/AbrahamSimpson_fastp.json
+Homer Simpson	fastp -i HomerSimpson_R1.fastq.gz -I HomerSimpson_R2.fastq.gz -o fastp_trimmed/HomerSimpson_trimmed_R1.fastq.gz -O fastp_trimmed/HomerSimpson_trimmed_R2.fastq.gz -h fastp_reports/HomerSimpson_fastp.html -j fastp_reports/HomerSimpson_fastp.json
+Bart Simpson	fastp -i BartSimpson_R1.fastq.gz -I BartSimpson_R2.fastq.gz -o fastp_trimmed/BartSimpson_trimmed_R1.fastq.gz -O fastp_trimmed/BartSimpson_trimmed_R2.fastq.gz -h fastp_reports/BartSimpson_fastp.html -j fastp_reports/BartSimpson_fastp.json
+Lisa Simpson	fastp -i LisaSimpson_R1.fastq.gz -I LisaSimpson_R2.fastq.gz -o fastp_trimmed/LisaSimpson_trimmed_R1.fastq.gz -O fastp_trimmed/LisaSimpson_trimmed_R2.fastq.gz -h fastp_reports/LisaSimpson_fastp.html -j fastp_reports/LisaSimpson_fastp.json
+Maggie Simpson	fastp -i MaggieSimpson_R1.fastq.gz -I MaggieSimpson_R2.fastq.gz -o fastp_trimmed/MaggieSimpson_trimmed_R1.fastq.gz -O fastp_trimmed/MaggieSimpson_trimmed_R2.fastq.gz -h fastp_reports/MaggieSimpson_fastp.html -j fastp_reports/MaggieSimpson_fastp.json
+
+Control de calidad después de fastp
+Paso	Objetivo	Comando
+1	Crear carpeta para reportes FastQC de archivos limpios	mkdir fastqc_trimmed
+2	Ejecutar FastQC sobre lecturas limpias	fastqc fastp_trimmed/*.fastq.gz -o fastqc_trimmed
+3	Crear reporte final con MultiQC	multiqc .
+4	Abrir reporte MultiQC	open multiqc_report.html
+Salmon: creación del índice
+Paso	Objetivo	Comando
+1	Crear índice de Salmon usando la referencia	salmon index -t Referencia.fasta -i salmon_index
+2	Verificar que el índice existe	ls salmon_index
+
+Salmon usando archivos limpios de fastp
+Muestra	Comando
+Abraham Simpson	salmon quant -i salmon_index -l A -1 fastp_trimmed/AbrahamSimpson_trimmed_R1.fastq.gz -2 fastp_trimmed/AbrahamSimpson_trimmed_R2.fastq.gz -o resultados_salmon_trimmed/AbrahamSimpson
+Homer Simpson	salmon quant -i salmon_index -l A -1 fastp_trimmed/HomerSimpson_trimmed_R1.fastq.gz -2 fastp_trimmed/HomerSimpson_trimmed_R2.fastq.gz -o resultados_salmon_trimmed/HomerSimpson
+Bart Simpson	salmon quant -i salmon_index -l A -1 fastp_trimmed/BartSimpson_trimmed_R1.fastq.gz -2 fastp_trimmed/BartSimpson_trimmed_R2.fastq.gz -o resultados_salmon_trimmed/BartSimpson
+Lisa Simpson	salmon quant -i salmon_index -l A -1 fastp_trimmed/LisaSimpson_trimmed_R1.fastq.gz -2 fastp_trimmed/LisaSimpson_trimmed_R2.fastq.gz -o resultados_salmon_trimmed/LisaSimpson
+Maggie Simpson	salmon quant -i salmon_index -l A -1 fastp_trimmed/MaggieSimpson_trimmed_R1.fastq.gz -2 fastp_trimmed/MaggieSimpson_trimmed_R2.fastq.gz -o resultados_salmon_trimmed/MaggieSimpson
+
+Verificación de resultados de Salmon
+Paso	Objetivo	Comando
+1	Confirmar que se generaron los archivos quant.sf	ls resultados_salmon_trimmed/*/quant.sf
+2	Ver contenido de una carpeta de Salmon	ls resultados_salmon_trimmed/LisaSimpson
+
+Pendiente: convertir resultados Salmon a CSV
+Objetivo	Comando
+Crear matriz de conteos NumReads en CSV	echo "Name,AbrahamSimpson,HomerSimpson,BartSimpson,LisaSimpson,MaggieSimpson" > matriz_counts_salmon.csv
+Añadir valores de NumReads	paste <(tail -n +2 resultados_salmon_trimmed/AbrahamSimpson/quant.sf | cut -f1) <(tail -n +2 resultados_salmon_trimmed/AbrahamSimpson/quant.sf | cut -f5) <(tail -n +2 resultados_salmon_trimmed/HomerSimpson/quant.sf | cut -f5) <(tail -n +2 resultados_salmon_trimmed/BartSimpson/quant.sf | cut -f5) <(tail -n +2 resultados_salmon_trimmed/LisaSimpson/quant.sf | cut -f5) <(tail -n +2 resultados_salmon_trimmed/MaggieSimpson/quant.sf | cut -f5) | sed 's/\t/,/g' >> matriz_counts_salmon.csv
+Crear matriz TPM en CSV	echo "Name,AbrahamSimpson,HomerSimpson,BartSimpson,LisaSimpson,MaggieSimpson" > matriz_TPM_salmon.csv
+Añadir valores TPM	paste <(tail -n +2 resultados_salmon_trimmed/AbrahamSimpson/quant.sf | cut -f1) <(tail -n +2 resultados_salmon_trimmed/AbrahamSimpson/quant.sf | cut -f4) <(tail -n +2 resultados_salmon_trimmed/HomerSimpson/quant.sf | cut -f4) <(tail -n +2 resultados_salmon_trimmed/BartSimpson/quant.sf | cut -f4) <(tail -n +2 resultados_salmon_trimmed/LisaSimpson/quant.sf | cut -f4) <(tail -n +2 resultados_salmon_trimmed/MaggieSimpson/quant.sf | cut -f4) | sed 's/\t/,/g' >> matriz_TPM_salmon.csv
