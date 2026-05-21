@@ -1,0 +1,20 @@
+En el dotplot de GSEA se representa, para cada conjunto de genes (KEGG, GO o Reactome), el resultado del análisis de enriquecimiento funcional a partir del ranking de todos los genes del experimento.
+
+En nuestro caso se están observando las diferencias de enriquecimiento en KEGG, GO o Reactome de Obesos vs. Normopeso, es decir, un valor de NES positivo indicaría que los Obesos muestran un enriquecimiento positivo en el conjunto de genes que se encuentra asociado al término que se representa (por ejemplo, Signaling Hormones).
+
+Cada punto del gráfico resume una vía biológica concreta y su interpretación es la siguiente:
+
+El eje Y muestra el nombre de la ruta o término funcional (por ejemplo, procesos biológicos o vías metabólicas).
+El eje X indica la base de datos de origen del término (KEGG, GO o Reactome), cuando se combinan varios análisis en un único gráfico.
+El tamaño del punto representa la significancia estadística del enriquecimiento (habitualmente -log10 del p-value o del FDR, en este caso el del FDR): cuanto mayor es el punto, mayor evidencia de enriquecimiento.
+El color del punto (cuando se incluye) suele representar el NES (Normalized Enrichment Score):
+Valores positivos indican enriquecimiento en el grupo con mayor expresión relativa en el ranking (por ejemplo, Obeso).
+Valores negativos indican enriquecimiento en el grupo contrario (Normopeso).
+
+En caso de que no aparezcan términos significativos tras la corrección por múltiples test (FDR < 0.05), el gráfico sigue siendo informativo, ya que permite observar:
+
+Tendencias débiles de enriquecimiento en ciertas rutas biológicas.
+Consistencia o dispersión de señales entre diferentes bases de datos (KEGG, GO y Reactome).
+Posibles procesos biológicos que, aunque no alcancen significación estadística, muestran una dirección coherente en el ranking de genes.
+
+En este contexto, la ausencia de significancia suele interpretarse como que los cambios observados en expresión génica están más concentrados a nivel de genes individuales que en alteraciones coordinadas de rutas completas, lo cual es habitual en datasets pequeños o simulados.
