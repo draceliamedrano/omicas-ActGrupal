@@ -6,7 +6,7 @@ Trabajaremos con las siguientes muestras:
 - Normopeso: Bart, Lisa y Maggie.
 
 Distribución de tareas entre los miembros del grupo:
-- Control de calidad, alineamiento y cuantificación: Isreal y Celia -> Dealine: miércoles 20 de mayo.
+- Control de calidad, alineamiento y cuantificación: Israel y Celia -> Dealine: miércoles 20 de mayo.
 - Análisis de la expresión diferencial, visualización y enriquecimiento: Baltasar y Alberto -> Deadline: jueves 21 de mayo.
 - Póster: Cristina y Ariadna -> Deadline: sábado 23 de mayo.
 
