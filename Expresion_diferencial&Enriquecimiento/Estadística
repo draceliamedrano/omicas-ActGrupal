@@ -1,0 +1,8 @@
+Análisis estadístico
+El análisis de expresión diferencial se realizó a partir de los read counts obtenidos mediante Salmon, agregando previamente los transcritos a nivel génico mediante anotación transcriptoma-gen. Se eliminaron los genes con conteos totales iguales a cero y los valores se redondearon para su procesamiento con DESeq2.
+
+La normalización y el análisis estadístico se llevaron a cabo en R utilizando un diseño experimental basado en la condición biológica (obeso vs. normopeso). La expresión diferencial se evaluó mediante modelos lineales generalizados de distribución binomial negativa implementados en DESeq2, empleando el método glmGamPoi para la estimación de dispersión y ajuste del modelo.
+
+Los genes diferencialmente expresados se identificaron considerando un umbral de significación de FDR ajustado por Benjamini–Hochberg < 0,05 y un valor absoluto de log2FoldChange > 0,5. Los resultados se visualizaron mediante volcano plots y mapas de calor (heatmaps) generados a partir de datos transformados en log2 y escalados por gen utilizando distancia euclídea y agrupamiento jerárquico completo.
+
+Para el análisis funcional se realizó un Gene Set Enrichment Analysis (GSEA) empleando el estadístico Wald obtenido en DESeq2 como métrica de ranking génico. Los genes se anotaron a identificadores ENTREZ utilizando org.Hs.eg.db y se evaluó el enriquecimiento funcional en las bases de datos KEGG, Gene Ontology (procesos biológicos) y Reactome mediante los paquetes clusterProfiler y ReactomePA. Se consideraron conjuntos génicos con tamaños entre 5 y 500 genes.
